@@ -1,10 +1,14 @@
 
 # StudioDashboad
 
-## Run
+## Prerequisites
 
-docker-compose build
+* docker
 
 ## Build
 
-docker-compose up
+`docker-compose build`
+
+## Run
+
+`docker-compose up`
