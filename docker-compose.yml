@@ -2,9 +2,20 @@ version: '3'
 services:
   studio-dashboard:
     build: 
-      context: .
+      context: ./dashboard
     ports:
-      - 8080:80
+      - 3000:80
+  event-source:
+    build: 
+      context: ./event_source
+    container_name: event-source
+    links:
+      - mqtt
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./event_source:/usr/src/app
+
   mqtt:
     image: eclipse-mosquitto
     container_name: mqtt

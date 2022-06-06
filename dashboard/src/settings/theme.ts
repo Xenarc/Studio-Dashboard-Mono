@@ -10,6 +10,7 @@ const theme = {
   warning: "#ffc107",
   danger: "#dc3545",
   weatherHigh: "#ff5757",
+  weatherMeasurement: "#ffc107",
   weatherLow: "#8ac8ff",
   weatherRain: "#5c82ff",
 }

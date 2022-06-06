@@ -3,11 +3,15 @@ FROM node:14 AS builder
 # set working directory
 WORKDIR /app
 
-COPY . .
+COPY package.json ./
+COPY package-lock.json ./
 
 RUN npm ci
 
+COPY . .
+
 RUN npm run build
+
 
 #Stage 2
 #######################################

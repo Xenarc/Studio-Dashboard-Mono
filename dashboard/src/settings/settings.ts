@@ -1,4 +1,4 @@
-import { faBell, faCoffee, faMicrophone, faPhone, faRadio, faTowerCell, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { faBell, faMicrophone, faPhone, faRadio, faTowerCell, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 
 export const pads:Array<{
   id: string,
@@ -40,11 +40,4 @@ export const pads:Array<{
   colour: "#f33333",
   side: "right",
   icon: faBell
-},
-{
-  id: "cofee",
-  text: "Coffee",
-  colour: "#f33333",
-  side: "left",
-  icon: faCoffee 
 }]
