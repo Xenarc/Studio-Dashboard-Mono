@@ -143,6 +143,25 @@ function App() {
         ).reverse()}
       </AlertsWrapper>
       <Column>
+        <Pad
+          colour={"#E05f9f"}
+          accentColour={"#D05f9f"}
+          icon={faClock}
+          selected={timer1.isRunning}
+          setSelected={() => {}}
+          onClick={() => {
+            if(timer1.isComplete){
+              setIsSelectingInterval(!isSelectingInterval);
+            }
+            else{
+              timer1.isRunning ? timer1.pause() : timer1.start();
+            }
+          }}
+          ondblclick={() => timer1.reset()}
+        >
+          {timer1.isComplete ? 
+            "Add timer" : timer1.countDown}
+        </Pad>
         {pads.map((pad, key) => {
           if(pad.side !== 'left') return <></>;
           return (
@@ -194,25 +213,6 @@ function App() {
             </Pad>
           );
         })}
-          <Pad
-            colour={"#E05f9f"}
-            accentColour={"#D05f9f"}
-            icon={faClock}
-            selected={timer1.isRunning}
-            setSelected={() => {}}
-            onClick={() => {
-              if(timer1.isComplete){
-                setIsSelectingInterval(!isSelectingInterval);
-              }
-              else{
-                timer1.isRunning ? timer1.pause() : timer1.start();
-              }
-            }}
-            ondblclick={() => timer1.reset()}
-          >
-            {timer1.isComplete ? 
-              "Add timer" : timer1.countDown}
-          </Pad>
           <IntervalPicker
             setInterval={(s:number, m:number, h:number) => {
               if(s === 0 && m === 0 && h === 0) return; // don't start 0 timer
